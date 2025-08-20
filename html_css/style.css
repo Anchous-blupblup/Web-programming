@@ -1,19 +1,43 @@
  /*p { background-color: red; } */
  p {
-    color: #9B2525;
+    color: #550808;
+    text-align: center;
+  font-family: Garamond;
   }
 
-  h1   {color: blue ;}
+  h1   {color: #550808 ;
+    text-transform: uppercase;
+    text-align: center;
+  font-family: Garamond;}
   
   .list 
   {
-    color: pink ;
+    color: #550808 ;
   }
 
   #red-point 
   {
-    color: red ;
+    color: #550808 ;
 
+  }
+
+  .paperOverlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    mix-blend-mode: multiply;
+    background-repeat: repeat;
+    pointer-events: none;
+    background-image: url("images/background.jpg");
+  }
+
+  a {
+    color: #550808 ;
+    text-transform: uppercase;
+    text-align-last: center;
+  font-family: Garamond; 
   }
 
   
