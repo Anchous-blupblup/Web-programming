@@ -1,23 +1,35 @@
  /*p { background-color: red; } */
  p {
-    color: #550808;
+    color: #300303;
     text-align: center;
   font-family: Garamond;
   }
 
-  h1   {color: #550808 ;
+  h1   {color: #300303 ;
     text-transform: uppercase;
     text-align: center;
-  font-family: Garamond;}
+  font-family: Garamond;
+  margin-top: 1em ;
+  padding-top: 1em ;
+}
   
   .list 
   {
-    color: #550808 ;
+    color: #300303 ;
+    text-align: justify ;
   }
 
+  img {
+    position: absolute;
+  }
+
+  table {
+    border: 1px solid;
+  }
+  
   #red-point 
   {
-    color: #550808 ;
+    color: #300303 ;
 
   }
 
@@ -34,11 +46,24 @@
   }
 
   a {
-    color: #550808 ;
+    color: #300303 ;
     text-transform: uppercase;
     text-align-last: center;
   font-family: Garamond; 
   }
+
+  body {
+
+    margin: 0 auto;
+    max-width: 50em;
+    text-align: center;
+    font-size: large;
+    line-height: 1.5 ;
+    padding: 4em 1em ;
+  
+  }
+
+
 
   
 
