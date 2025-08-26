@@ -12,6 +12,14 @@
   margin-top: 1em ;
   padding-top: 1em ;
 }
+
+h2   {color: #300303 ;
+  text-transform: uppercase;
+  text-align: center;
+font-family: Garamond;
+margin-top: 1em ;
+padding-top: 1em ;
+}
   
   .list 
   {
@@ -19,9 +27,6 @@
     text-align: justify ;
   }
 
-  img {
-    position: absolute;
-  }
 
   table {
     border: 1px solid;
@@ -31,18 +36,6 @@
   {
     color: #300303 ;
 
-  }
-
-  .paperOverlay {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    mix-blend-mode: multiply;
-    background-repeat: repeat;
-    pointer-events: none;
-    background-image: url("images/background.jpg");
   }
 
   a {
@@ -61,9 +54,24 @@
     line-height: 1.5 ;
     padding: 4em 1em ;
   
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    mix-blend-mode: multiply;
+    background-repeat: repeat;
+    background-image: url("images/background.jpg");
   }
 
-
+  .center-container {
+    display: flex;
+    justify-content: center; 
+    align-items: flex-start; 
+    gap: 2em; 
+    margin: 2em auto;
+    max-width: 900px; 
+  }
 
   
 
