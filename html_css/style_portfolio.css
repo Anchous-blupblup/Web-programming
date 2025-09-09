@@ -1,3 +1,108 @@
 body {
-    font-family: 'Figtree';font-size: 22px;
+    font-family: 'Figtree';
+    font-size: 32px;
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+:root {
+    --text-color: #FFFFFF;
+    --link-color: #FFFFFF;
+    --background-color: #0C1B2F;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+a {
+    color: (--link-color);
+    text-decoration: none;
+    font-family: 'Caveat', cursive;
+    font-size: 32px;
+}
+
+a:visited {
+    color: rgb(209, 236, 255);
+}
+
+
+@font-face {
+    font-family: 'Caveat';
+    src: url('caveat.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0 50px;
+    height: 80px;
+    background-color: #05244B;
+}
+
+@media(max-widght:600px) {
+    nav {
+        padding: 0 20px;
+    }
+}
+
+h1 {
+    color: (--link-color);
+    text-decoration: none;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    font-weight: 900;
+    font-size: 64px;
+    padding: 0 50px;
+    height: 80px;
+}
+
+h3 {
+    color: (--link-color);
+    text-decoration: none;
+    font-family: 'Caveat';
+    font-size: 48px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 0 50px;
+    height: 80px;
+}
+
+h4 {
+    color: (--link-color);
+    text-decoration: none;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    font-size: 32px;
+    padding: 0 50px;
+    height: 80px;
+}
+
+.sectionbox {
+    align-items: left;
+    color: (--link-color);
+    text-decoration: none;
+    font-family: 'Caveat', cursive;
+    font-size: 32px;
+    height: 80px;
+    background-color: #05244B;
+    align-items: center;
+    padding: 0 50px;
+    height: 80px;
+}
+
+.text {
+    background-image: url("images/headBackground.png");
 }
