@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Pet Page</title>
+</head>
+
+<body>
+    <p>
+        <h1>HTML form exercise</h1>
+    </p>
+
+    <form action="/action_page.php">
+        <label for="petname">Pet's name:</label><br>
+        <input type="text" id="petname" name="petname" value=""><br>
+        <label for="petbd">The pet's date of birth</label><br>
+        <input type="date" id="petbd" name="petbd" value=""><br><br>
+
+        <label for="petspecies">Pet species:</label><br><br>
+        <input type="radio" id="cat" name="petspecies" value="Cat">
+        <label for="cat">Cat</label><br>
+        <input type="radio" id="dog" name="petspecies" value="Dog">
+        <label for="dog">Dod</label><br>
+        <input type="radio" id="hamster" name="petspecies" value="Hamster">
+        <label for="hamster">Hamster</label><br>
+        <input type="radio" id="snake" name="petspecies" value="Snake">
+        <label for="snake">Snake</label><br><br>
+
+        <label for="favorite">Pet's favorite things:</label><br><br>
+        <input type="checkbox" id="favorite1" name="favorite1" value="Sleeping">
+  <label for="Sleeping"> Sleeping</label><br>
+  <input type="checkbox" id="favorite2" name="favorite2" value="Food">
+  <label for="favorite2"> Food</label><br>
+  <input type="checkbox" id="favorite3" name="favorite3" value="Playing">
+  <label for="favorite3"> Playing</label><br>
+  <input type="checkbox" id="favorite4" name="favorite4" value="Running">
+  <label for="favorite4"> Running</label><br><br>
+
+  <label for="petcolor">Pet color:</label><br>
+  <label for="petcolor">Choose a color:</label>
+  <input type="color" id="petcolor" name="petcolor"><br><br>
+
+  <label for="equipment">Pet equipment:</label><br><br>
+  <label for="equipment">Equipment:</label>
+  <select id="equipment" name="equipment">
+    <option value="band">Band</option>
+    <option value="belt">Belt</option>
+    <option value="transport_box">Transport box</option>
+    <option value="toys">Toys</option>
+  </select><br><br>
+
+        <input type="submit" value="Submit">
+        <input type="reset" value="Reset">
+      </form>
+</body>
+
+</html>
