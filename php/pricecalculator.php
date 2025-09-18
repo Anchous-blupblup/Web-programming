@@ -24,7 +24,7 @@
     echo "Subtotal: " . number_format($amount, 2, ".", " ") . " €" . "<br>";
     echo "Discount (15%): " . number_format($discount_eur, 2, ".", " ") . " €" . "<br>";
     echo "-----------------------------------------------" . "<br>";
-    echo "<b>Final price: " . number_format($finalsum, 2, ".", " ") . " €<b><br>";
+    echo "<b>Final price: " . number_format($finalsum, 2, ".", " ") . " €</b><br>";
 
     ?>
 
