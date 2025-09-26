@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Order Form</title>
+    <style>
+
+    </style>
+    <link rel="stylesheet" href="order.css">
+
+</head>
+
+<body>
+    <div class="container">
+        <h1>Order the product</h1>
+
+        <h3>Product: Electric scooter (€349.90/piece)</h3>
+
+        <form method="post" action="order.php">
+
+            <label for="quantity">Quantity:</label><br>
+            <input type="number" id="quantity" name="quantity" value="1"><br>
+
+            <label for="delivery">Delivery method:</label><br>
+            <select id="deliverymethod" name="deliverymethod">
+                <option value="Pickup">Pickup (0.00€)</option>
+                <option value="Postal Package">Postal Package (6.90€)</option>
+                <option value="Home Delivery">Home Delivery (12.50€)</option>
+            </select><br>
+
+            <input type="submit" value="Calculate the price">
+        </form>
+
+        <h2>Order summary</h2>
+        <?php
+        // Print summary if available
+        if ($summary) {
+            echo '<div class='summary'>$summary</div>';
+        }
+        ?>
+    </div>
+</body>
+
+</html>
