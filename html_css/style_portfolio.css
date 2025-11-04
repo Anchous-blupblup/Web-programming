@@ -23,7 +23,7 @@ html {
 }
 
 a {
-    color: white;
+    color: (--link-color);
     text-decoration: none;
     font-family: 'Caveat', cursive;
     font-size: 32px;
@@ -144,8 +144,7 @@ h4 {
 
 .toolbox {
     display: flex;
-    min-width: 320px;
-   padding: 20px;
+    width: 320px;
     height: 80px;
     align-items: center;
     background-color: #05244B;
@@ -172,29 +171,7 @@ h4 {
     justify-content: space-around;
     height: 300px;
     text-shadow: 0px 5px 30px #05244B;
-}
 
-.darkesthead {
-    background-image: url("images/darkestBackground.png");
-    background-repeat: no-repeat;
-    background-size: cover;
-    align-items: center;
-    flex-direction: column;
-    display: flex;
-    justify-content: space-around;
-    height: 300px;
-    text-shadow: 0px 5px 30px #05244B;
-}
-
-.portfolioArt {
-  width: 100%;      
-  height: auto;      
-  display: block;    
-  max-width: 100%;  
-  padding: 0 50px;
-    margin-top: 30px;
-    margin-bottom: 30px;
-    gap: 30px 30px;
 }
 
 .title {
