@@ -1,64 +1,73 @@
-<!DOCTYPE html>
-<html>
+<?php
 
+$summary = "";
+
+
+function calculateDeliveryPrice($deliverymethod) {
+    switch ($deliverymethod) {
+        case "Pickup": return 0.00;
+        case "Postal Package": return 6.90;
+        case "Home Delivery": return 12.50;
+        default: return 0;
+    }
+}
+
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $price_piece = 349.90;
+    $quantity = (int)($_POST["quantity"] ?? 1);
+    $deliverymethod = $_POST["deliverymethod"] ?? "Pickup";
+
+    $subtotal = $price_piece * $quantity;
+    $delivery = calculateDeliveryPrice($deliverymethod);
+    $total = $subtotal + $delivery;
+
+    $summary = "
+        <div class='summary-box'>
+            <h3>Order Summary</h3>
+            <p><strong>Quantity:</strong> $quantity pcs</p>
+            <p><strong>Subtotal:</strong> " . number_format($subtotal, 2) . " €</p>
+            <p><strong>Delivery method:</strong> $deliverymethod</p>
+            <p><strong>Shipping cost:</strong> " . number_format($delivery, 2) . " €</p>
+            <p><strong>Total price:</strong> <span class='total'>" . number_format($total, 2) . " €</span></p>
+        </div>
+    ";
+}
+?>
+
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <title>Salary</title>
+    <meta charset="UTF-8">
+    <title>Order Form</title>
+    <link rel="stylesheet" href="order.css">
 </head>
 
 <body>
-    <?php
+    <div class="container">
+        <h1>Order the product</h1>
+        <h3>Product: Electric scooter (€349.90/piece)</h3>
 
-    // PHP task 7: Order form prototype
-    
-    // Copy the function from task 6
-    
-    // Initialize the variables so that they exist even if the form has not been submitted
-    $summary = null;
-    $quantity = null;
-    $selected_method = "";
-    $deliverymethod = "";
-    $price = "";
-    $total  = "";
-    $subtotal  = "";
+        <form method="post" action="">
+            <label for="quantity">Quantity:</label><br>
+            <input type="number" id="quantity" name="quantity" value="1" min="1"><br>
 
-    // Check if the form has been submitted
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        // Retrieve data from the form
-        // Product information
-        // Calculations
-        // Build a summary variable for printing
+            <label for="deliverymethod">Delivery method:</label><br>
+            <select id="deliverymethod" name="deliverymethod">
+                <option value="Pickup">Pickup (0.00€)</option>
+                <option value="Postal Package">Postal Package (6.90€)</option>
+                <option value="Home Delivery">Home Delivery (12.50€)</option>
+            </select><br><br>
 
-        $price_piece = 349.90;
-        $quantity = $_POST["quantity"] ?? "";
-        $selected_method = $_POST["deliverymethod"] ?? "";
-        $deliverymethod = $selected_method;
-        $price = calculateDeliveryPrice($deliverymethod);
-        function calculateDeliveryPrice($deliverymethod)
-        {
-            switch ($deliverymethod) {
-                case "Pickup":
-                    return 0.00;
-                case "Postal Package":
-                    return 6.90;
-                case "Home Delivery":
-                    return 12.50;
-                default:
-                    return -1;
-            }
+            <input type="submit" class="button" value="Calculate the price">
+        </form>
+
+        <?php
+
+        if ($summary) {
+            echo $summary;
         }
-        $subtotal = $price_piece * $quantity;
-        $total = $price + $subtotal; 
-        $summary = "
-        <h2>Order Summary</h2>
-        <p><strong>Quantity:</strong> $quantity pcs</p>
-        <p><strong>Subtotal:</strong> " . number_format($subtotal, 2) . " €</p>
-        <p><strong>Delivery method:</strong> $selected_method;</p>
-        <p><strong>Shipping cost:</strong> " . number_format($price, 2) . " €</p>
-        <p><strong>Total price:</strong> <span class='total'>" . number_format($total, 2) . " €</span></p>
-    ";
-    }
-
-    ?>
+        ?>
+    </div>
 </body>
-
 </html>
