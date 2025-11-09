@@ -1,0 +1,121 @@
+body {
+  margin: 0;
+  font-family: Arial Black, sans-serif;
+  background-color: #fffafc;
+}
+
+nav {
+  background-color: #ff6340;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+nav ul li {
+  margin: 0;
+}
+
+nav ul li a {
+  display: block;
+  padding: 14px 20px;
+  color: rgb(255, 235, 199);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+nav ul li a:hover {
+  background-color: #ff7e61;
+}
+
+nav ul li.active a {
+  background-color: #ff9831;
+  color: rgb(255, 235, 199);
+}
+
+main {
+  padding: 20px;
+  text-align: center;
+}
+
+h1 {
+  font-size: 2em;
+  margin-bottom: 10px;
+}
+
+.cat-order {
+  display: flex;
+  margin-top: 20px;
+  align-items: center;
+  align-content: space-around;
+  justify-content: space-evenly;
+}
+
+.cat-image {
+  width: 300px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.cat-form {
+  display: inline-block;
+  text-align: left;
+  width: 60%;            
+  max-width: 500px;      
+  background-color: #fff3e6;
+  padding: 20px 30px;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.cat-form label {
+  display: block;
+  margin-top: 10px;
+  font-weight: bold;
+  color: #ff6340;
+}
+
+
+.cat-form select,
+.cat-form input[type="number"],
+.cat-form input[type="text"],
+.cat-form input[type="email"],
+.cat-form textarea {
+  display: block;
+  width: 85%;           
+  margin: 10px auto;  
+  padding: 10px;
+  box-sizing: border-box;
+  border-radius: 8px;
+  border: 1px solid #ff9831;
+  font-size: 1em;
+  background-color: #fff;
+  height: 42px;
+}
+
+
+.cat-form textarea {
+  height: auto; 
+}
+
+.cat-form button {
+  display: block;
+  width: 85%;           
+  margin: 15px auto;    
+  padding: 10px 20px;
+  background-color: #ff6340;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.cat-form button:hover {
+  background-color: #ff7e61;
+}
