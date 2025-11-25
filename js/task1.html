@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>First JavaScript page</title>
+</head>
+
+<body>
+    <h1>Welcome!</h1>
+    <p id="greetings"></p>
+
+    <script>
+        let name = "Anna";
+        let age = 27;
+        const d = new Date();
+        let year = d.getFullYear();
+        let birthyear = year - age; 
+        document.getElementById("greetings").innerText = "Hi " + name + "," + " you were born in " + birthyear + ".";
+    </script>
+</body>
+
+</html>
