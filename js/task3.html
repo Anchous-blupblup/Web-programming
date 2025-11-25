@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="fi">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Simple calculator</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            padding: 20px;
+        }
+
+        input {
+            padding: 5px;
+            margin: 5px;
+        }
+
+        button {
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+
+        #result {
+            font-weight: bold;
+            font-size: 1.2em;
+            color: green;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Adder</h1>
+    <p>Enter two numbers, and I'll add them together.</p>
+
+    <label>Number 1:</label>
+    <input type="number" id="number1" placeholder="Enter 1st number">
+    <br>
+
+    <label>Number 2:</label>
+    <input type="number" id="number2" placeholder="Enter 2nd number">
+    <br>
+
+    <button onclick="calculateSum()">Calculate sum</button>
+
+    <p>Result: <span id="result"></span></p>
+
+    <script>
+        // TASK: Write the function calculateSum() here
+        function calculateSum(number1, number2) {
+            // 1. Get the elements number1 and number2
+            // 2. Take their values ​​(.value) and convert them to numbers
+            // 3. Calculate the sum
+            // 4. Place the result in the element with id="result" (.innerHTML or .innerText)
+            let num1 = Number(document.getElementById("number1").value);
+            let num2 = Number(document.getElementById("number2").value);
+            let sum = num1 + num2;
+            document.getElementById("result").innerText = sum;
+            
+        }
+    </script>
+
+</body>
+
+</html>
