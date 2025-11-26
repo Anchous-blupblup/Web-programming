@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Salary calculator</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            padding: 20px;
+        }
+
+        input {
+            padding: 5px;
+            margin: 5px;
+        }
+
+        button {
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+
+
+        #result-box {
+            margin-top: 20px;
+            padding: 15px;
+            border: 1px solid #ccc;
+            width: 300px;
+            display: none;
+        }
+
+        #error {
+            color: red;
+            font-weight: bold;
+            display: none;
+        }
+
+        .success {
+            color: green;
+        }
+
+        .warning {
+            color: orange;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Salary calculator</h1>
+    <p>Enter hourly wage (&euro;), hours worked (h) and tax rate (%).</p>
+
+    <p id="error"></p>
+
+    <label>Hourly wage (&euro;):</label>
+    <input type="number" id="wage" placeholder="Hourly wage (&euro;)">
+    <br>
+    <br>
+    <label>Hours worked (h):</label>
+    <input type="number" id="hour" placeholder="Hours worked (h)">
+    <br>
+    <br>
+    <label>Tax rate (%):</label>
+    <input type="number" id="tax" placeholder="Tax rate (%)">
+    <br>
+    <br>
+    <button onclick="performCalculation()">Calculate</button>
+
+    <div id="result-box">
+        <p>Gross Salary: <span id="gross"></span> &euro; </p>
+        <p>Tax Amount: <span id="taxamount"></span> &euro; </p>
+        <p>Net Salary: <span id="net"></span> &euro; </p>
+    </div>
+
+    <script>
+        function performCalculation() {
+
+            // 1. Get elements into variables (document.getElementById)
+            // 2. Save values ​​into variables and convert to numbers (Number() or parseFloat())
+
+            let wage = Number(document.getElementById("wage").value);
+            let hour = Number(document.getElementById("hour").value);
+            let tax = Number(document.getElementById("tax").value);
+
+            let errorBox = document.getElementById("error");
+
+            // 3. Validation (Challenge):
+            // Use an if statement to check whether the numbers are reasonable (e.g. not negative).
+            // If errors -> Print an error message and stop the function (return).
+            if (wage <= 0 || hour <= 0 || tax <= 0) {
+                document.getElementById("error").style.display = "block";
+                errorBox.innerText = "Please check the information you entered.";
+                document.getElementById("result-box").style.display = "none";
+                return;
+            }
+            // 4. Calculation formulas:
+            // gross = ...
+            // tax = ...
+            // net = ...
+            errorBox.innerText = "";
+
+            let gross = wage * hour;
+            let taxamount = gross * (tax / 100);
+            let net = gross - taxamount;
+
+
+            document.getElementById("gross").innerText = gross.toFixed(2);
+            document.getElementById("taxamount").innerText = taxamount.toFixed(2);
+            document.getElementById("net").innerText = net.toFixed(2);
+
+            
+            let resultBox = document.getElementById("result-box");
+            resultBox.style.display = "block";
+
+            // 5. Update HTML:
+            // Make the result box visible.
+            // Place the calculated values ​​in HTML elements.
+
+            // 6. Change style with condition:
+            // if (net < 100) {
+            // change the color of the result text to red
+            // } else {
+            // change the color to green
+            // }
+
+            if (net < 100) {
+                resultBox.className = "warning";
+            } else {
+                resultBox.className = "success";
+            }
+        }
+    </script>
+</body>
+
+</html>
