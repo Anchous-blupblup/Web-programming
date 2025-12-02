@@ -3,26 +3,56 @@
 
 <head>
     <title>Conditional statements and loops</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            padding: 20px;
+        }
+
+        button {
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+    </style>
 </head>
 
 <body>
     <h1>Task 5</h1>
     <h2>Car object:</h2>
-    <div id="car-box">
-        <p>Brand: <span id="brand"></span> &euro; </p>
-        <p>Model: <span id="model"></span> &euro; </p>
-        <p>Year: <span id="yaer"></span> &euro; </p>
-    </div>
-
-    <button onclick="runCar()">Start engine!</button>
+    <div id="car-box"> </div>
+    <br>
+    <button onclick="car.start()">Start engine!</button>
+    <br>
+    <p id="car-started"></p>
 
     <script>
         const car = {
             brand: "Subaru",
             model: "Legacy Touring GT-B",
             year: 1998,
-            running: false
+            running: false,
+            
+            start: function () {
+                this.running = true;        
+                document.getElementById("car-started").innerText =
+                    "The car started! Vroom vroom!";
+                updateCarInfo();            
+            }
         };
+
+        
+
+        function updateCarInfo() {
+            let text =
+                "Brand: " + car.brand + "<br>" +
+                "Model: " + car.model + "<br>" +
+                "Year: " + car.year + "<br>" +
+                "Running: " + car.running;
+
+            document.getElementById("car-box").innerHTML = text;
+        }
+
+        updateCarInfo();
     </script>
 </body>
 
