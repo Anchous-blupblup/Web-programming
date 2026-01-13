@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="fi">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Shop</title>
+    <style>
+        body {
+
+            padding: 20px;
+            background-color: #ffe8f3;
+            font-family: "Chewy", system-ui;
+            font-weight: 400;
+            font-style: normal;
+
+        }
+
+        .button {
+            background-color: #9cfcff;
+            border: none;
+            color: rgb(0, 0, 0);
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            font-family: "Chewy", system-ui;
+            font-weight: 400;
+            font-style: normal;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 12px;
+        }
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chewy&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <h1>Purrfect shop🐈</h1>
+
+    <nav>
+        <ul id="nav-list"></ul>
+    </nav>
+
+    <div style="margin-top: 20px; padding: 10px; border: 10px solid #9cfcff ; border-radius: 25px;">
+        <div class="product">
+            <h3 id="product-name"></h3>
+            <p id="product-price"></p>
+            <p>Perfect kitty for you!</p>
+            <img src="https://www.goodlifebean.com/cdn/shop/products/02f99a6d-ad77-4e18-931d-462a8595e558.jpg?v=1742461121"
+                alt="cat" width="300" height="300">
+            <br>
+        </div>
+
+        <div>
+            <br>
+            <label>
+                Quantity:
+                <input type="number" id="quantity" min="1" value="1">
+            </label>
+            <br>
+            <br>
+            <button class="button" onclick="addToCart()">Add to cart</button>
+        </div>
+
+        <div class="cart">
+            <h3>Shopping cart</h3>
+            <ul id="cart-list"></ul>
+            <p><strong>Total: €<span id="total">0</span></strong></p>
+        </div>
+    </div>
+
+    <script>
+        const product = {
+            name: "Plush cat",
+            price: 25
+        };
+
+        // Shopping cart array
+        let cart = [];
+
+        // Display product info
+        document.getElementById("product-name").textContent = product.name;
+        document.getElementById("product-price").textContent = "Price: €" + product.price;
+
+        function addToCart() {
+            const quantity = Number(document.getElementById("quantity").value);
+
+            if (quantity <= 0) {
+                alert("Please enter a valid quantity.");
+                return;
+            }
+
+            const itemTotal = quantity * product.price;
+
+            // Add order to cart array
+            cart.push({
+                name: product.name,
+                quantity: quantity,
+                total: itemTotal
+            });
+
+            updateCart();
+        }
+
+        function updateCart() {
+            const cartList = document.getElementById("cart-list");
+            cartList.innerHTML = "";
+
+            let totalSum = 0;
+
+            cart.forEach(item => {
+                const li = document.createElement("li");
+                li.textContent = `${item.name} x ${item.quantity} = €${item.total}`;
+                cartList.appendChild(li);
+
+                totalSum += item.total;
+            });
+
+            document.getElementById("total").textContent = totalSum;
+        }
+    </script>
+
+</body>
+
+</html>
